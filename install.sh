@@ -67,6 +67,12 @@ gen_data() {
     done
 }
 
+gen_data_no_password() {
+    seq $FIRST_PORT $LAST_PORT | while read port; do
+        echo "//$IP4/$port/$(gen64 $IP6)"
+    done
+}
+
 gen_iptables() {
     cat <<EOF
     $(awk -F "/" '{print "iptables -I INPUT -p tcp --dport " $4 "  -m state --state NEW -j ACCEPT"}' ${WORKDATA}) 
