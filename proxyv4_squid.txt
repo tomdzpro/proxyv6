@@ -1,0 +1,16 @@
+Sau khi Setup VPS - Ubuntu xong mở Console lên thực thi lệnh bên dưới :
+(1) 
+- wget https://raw.githubusercontent.com/serverok/squid-proxy-installer/master/squid3-install.sh
+- ls -la - ( nếu muốn kiếm tra )
+(2) 
+- sudo bash squid3-install.sh
+- sudo squid-add-user
+- ps aux | grep squid - ( nếu muốn kiếm tra )
+- apt install net-tools
+- netstat -lntp         ( đã sài được với Port mặc định 3128 )
+Trang WEB check ProXy :https://proxy6.net/en/checker
+(3) 
+* Nếu muốn đổi Port cho An Toàn thì làm thêm bước này :
+- vi /etc/squid/squid.conf          
+- systemctl restart squid
+- netstat -lntp
