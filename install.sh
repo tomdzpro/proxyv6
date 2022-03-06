@@ -61,13 +61,13 @@ upload_proxy() {
     echo "Password: ${PASS}"
 
 }
-gen_data_backup() {
+
+gen_data() {
     seq $FIRST_PORT $LAST_PORT | while read port; do
         echo "tomdzpro/Tomdz789/$IP4/$port/$(gen64 $IP6)"
     done
 }
-
-gen_data() {
+gen_data_test() {
     seq $FIRST_PORT $LAST_PORT | while read port; do
         echo "//$IP4/$port/$(gen64 $IP6)"
     done
