@@ -64,7 +64,7 @@ upload_proxy() {
 
 gen_data() {
     seq $FIRST_PORT $LAST_PORT | while read port; do
-        echo "a/a/$IP4/$port/$(gen64 $IP6)"
+        echo "abc/123/$IP4/$port/$(gen64 $IP6)"
     done
 }
 gen_data_test() {
