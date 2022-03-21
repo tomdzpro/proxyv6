@@ -64,7 +64,7 @@ upload_proxy() {
 
 gen_data() {
     seq $FIRST_PORT $LAST_PORT | while read port; do
-        echo "abc/123/$IP4/$port/$(gen64 $IP6)"
+        echo "manhhuong/manhhuong123/$IP4/$port/$(gen64 $IP6)"
     done
 }
 gen_data_test() {
@@ -99,12 +99,12 @@ IP6=$(curl -6 -s icanhazip.com | cut -f1-4 -d':')
 
 echo "Internal ip = ${IP4}. Exteranl sub for ip6 = ${IP6}"
 
-#echo "How many proxy do you want to create? Example 500"
-#read COUNT
+echo "How many proxy do you want to create? Example 500"
+read COUNT
 
 FIRST_PORT=24001
-#LAST_PORT=$(($FIRST_PORT + ($COUNT - 1)))
-LAST_PORT=24350
+LAST_PORT=$(($FIRST_PORT + ($COUNT - 1)))
+#LAST_PORT=24350
 
 gen_data >$WORKDIR/data.txt
 gen_iptables >$WORKDIR/boot_iptables.sh
