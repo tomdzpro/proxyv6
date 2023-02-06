@@ -104,7 +104,7 @@ echo "Internal ip = ${IP4}. Exteranl sub for ip6 = ${IP6}"
 
 FIRST_PORT=24001
 #LAST_PORT=$(($FIRST_PORT + ($COUNT - 1)))
-LAST_PORT=24300
+LAST_PORT=24400
 
 gen_data >$WORKDIR/data.txt
 gen_iptables >$WORKDIR/boot_iptables.sh
